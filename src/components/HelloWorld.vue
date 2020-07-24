@@ -2,18 +2,13 @@
   <div>
     <!-- 内容区域 -->
     <div class="content">
-      <div>一级标题页面</div>
-      <div>一级标题页面</div>
-      <div>二级标题页面</div>
-      <div>二级标题页面</div>
-      <div>一级标题页面</div>
-      <div>一级标题页面</div>
+      <div v-for="(item, index) in items" :key="index">{{ item.text }}</div>
     </div>
     <!-- 导航区域 -->
     <ul class="nav">
       <li :class="{active: active===0}" @click="scrollTo(0)">一级标题</li>
       <li :class="{active: active===1}" @click="scrollTo(1)">一级标题</li>
-        <ul class="nav2">
+        <ul>
           <li :class="{active: active===2}" @click="scrollTo(2)">二级标题</li>
           <li :class="{active: active===3}" @click="scrollTo(3)">二级标题</li>
         </ul>
@@ -28,7 +23,15 @@ export default {
   name: 'Anchor',
   data () {
     return {
-      active: 0 // 当前激活的导航索引
+      active: 0, // 当前激活的导航索引
+      items: [
+        {text: '一级标题页面'},
+        {text: '一级标题页面'},
+        {text: '二级标题页面'},
+        {text: '二级标题页面'},
+        {text: '一级标题页面'},
+        {text: '一级标题页面'}
+      ]
     }
   },
   methods: {
@@ -104,11 +107,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /* 内容区样式  */
 .content {
-  background-color:white;
+  background-color:#FFFFFF;
   width: 600px;
 }
 .content div {
@@ -116,10 +118,9 @@ export default {
   height: 500px;
   font-size: 48px;
   padding: 50%;
-  background-color: #7ec384;
-}
-.content div:nth-child(2n) {
-  background-color: #847ec3;
+  margin: 10px 0;
+  color:#FFFFFF;
+  background-color:rgb(54, 77, 121);;
 }
 
 /* 导航栏样式 */
@@ -127,12 +128,22 @@ export default {
   position: fixed;
   top: 50px;
   right: 100px;
-  background-color:  #efefef;
+}
+.nav:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7px;
+    bottom: 0;
+    width: 5px;
+    background-color:#e8e8e8;
+    opacity: .5;
 }
 .nav li {
   font-size: 36px;
   padding: 5px 20px;
   line-height: 1.6;
+  list-style-type: none;
 }
 .nav .active {
   color: #007FFF;
