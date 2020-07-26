@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 内容区域 -->
-     <div class="content">
+    <div class="content">
       <div v-for="(item, index) in items" :key="index" :id="item.id">{{ item.text }}</div>
     </div>
     <!-- 导航区域 -->
