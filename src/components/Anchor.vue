@@ -11,7 +11,7 @@
           :href="link"
           :title="title"
           :class="{active: active === 0}"
-          @click="linkName(0);scrollTo(0)">
+          @click="linkTo(0);scrollTo(0)">
           一级标题
         </a>
       </li>
@@ -20,36 +20,36 @@
           :href="link"
           :title="title"
           :class="{active: active === 1}"
-          @click="linkName(1);scrollTo(1)">
+          @click="linkTo(1);scrollTo(1)">
           一级标题
         </a>
       </li>
-        <ul>
-         <li>
-        <a
-          :href="link"
-          :title="title"
-          :class="{active: active === 2}"
-          @click="linkName(2);scrollTo(2)">
-          二级标题
-        </a>
-      </li>
-          <li>
-        <a
-          :href="link"
-          :title="title"
-          :class="{active: active === 3}"
-          @click="linkName(3);scrollTo(3)">
-          二级标题
-        </a>
-      </li>
-        </ul>
+      <ul>
+        <li>
+          <a
+            :href="link"
+            :title="title"
+            :class="{active: active === 2}"
+            @click="linkTo(2);scrollTo(2)">
+            二级标题
+          </a>
+        </li>
+            <li>
+          <a
+            :href="link"
+            :title="title"
+            :class="{active: active === 3}"
+            @click="linkTo(3);scrollTo(3)">
+            二级标题
+          </a>
+        </li>
+      </ul>
       <li>
         <a
           :href="link"
           :title="title"
           :class="{active: active === 4}"
-          @click="linkName(4);scrollTo(4)">
+          @click="linkTo(4);scrollTo(4)">
           一级标题
         </a>
       </li>
@@ -58,7 +58,7 @@
           :href="link"
           :title="title"
           :class="{active: active === 5}"
-          @click="linkName(5);scrollTo(5)">
+          @click="linkTo(5);scrollTo(5)">
           一级标题
         </a>
       </li>
@@ -86,24 +86,21 @@ export default {
   computed: {
   },
   methods: {
-    linkName (index) {
+    // 锚点跳转
+    linkTo (index) {
       const navContents = document.querySelectorAll('.content div')
       const array = []
       const key = 'id'
       navContents.forEach(item => {
         array.push(`#${item[key]}`)
       })
-      // console.log(array)
-      console.log(array[index])
-      // return array[index]
+      // console.log(array[index])
       window.location.href = array[index]
     },
+
     // 监听滚动器
     onScroll () {
       const navContents = document.querySelectorAll('.content div')
-      // console.log(typeof navContents)
-      // console.log(navContents)
-      // console.log(navContents[0].getAttribute('id'))
       const offsetTopArray = []
       navContents.forEach(item => {
         offsetTopArray.push(item.offsetTop)
@@ -186,7 +183,7 @@ export default {
   padding: 50%;
   margin: 10px 0;
   color:#FFFFFF;
-  background-color:rgb(54, 77, 121);;
+  background-color:rgb(54, 77, 121);
 }
 .content div:nth-child(2n) {
     background-color: #847ec3;
@@ -199,14 +196,14 @@ export default {
   right: 100px;
 }
 .nav:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 7px;
-    bottom: 0;
-    width: 5px;
-    background-color:#e8e8e8;
-    opacity: .5;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7px;
+  bottom: 0;
+  width: 5px;
+  background-color:#e8e8e8;
+  opacity: .5;
 }
 .nav li {
   font-size: 36px;

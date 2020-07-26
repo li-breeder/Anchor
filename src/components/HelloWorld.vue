@@ -107,29 +107,31 @@ export default {
 }
 </script>
 
-<style scoped>
-/* 内容区样式  */
+<style lang="less" scoped>
+// 内容区样式
 .content {
   background-color:#FFFFFF;
-  width: 600px;
-}
-.content div {
-  width: 100%;
-  height: 500px;
-  font-size: 48px;
-  padding: 50%;
-  margin: 10px 0;
-  color:#FFFFFF;
-  background-color:rgb(54, 77, 121);;
+  width: 300px;
+  div {
+    width: 100%;
+    height: 500px;
+    font-size: 48px;
+    padding: 50%;
+    margin: 10px 0;
+    color:#FFFFFF;
+    background-color:rgb(54, 77, 121);
+    &:nth-child(2n) {
+      background-color: #847ec3;
+    }
+  }
 }
 
-/* 导航栏样式 */
+// 导航栏样式
 .nav {
   position: fixed;
   top: 50px;
   right: 100px;
-}
-.nav:before {
+  &:before {
     content: "";
     position: absolute;
     top: 0;
@@ -138,15 +140,16 @@ export default {
     width: 5px;
     background-color:#e8e8e8;
     opacity: .5;
+  }
+  .li {
+    font-size: 36px;
+    padding: 5px 20px;
+    line-height: 1.6;
+    list-style-type: none;
+  }
+  .active {
+    color: #007FFF;
+    background-color: #e2e2e2;
+  }
 }
-.nav li {
-  font-size: 36px;
-  padding: 5px 20px;
-  line-height: 1.6;
-  list-style-type: none;
-}
-.nav .active {
-  color: #007FFF;
-  background-color: #e2e2e2;
-}
-</style>
+</style>>
