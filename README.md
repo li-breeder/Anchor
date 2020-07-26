@@ -1,6 +1,6 @@
 # vue-demo
 
-> A Vue.js project
+> An Anchor component with vue!
 
 ## Build Setup
 

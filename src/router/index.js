@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/Anchor'
-// import Anchor from '@/components/Anchor'
+import Anchor from '@/components/Anchor'
+import Helloworld from '@/components/Helloworld'
 
 Vue.use(Router)
 
@@ -10,7 +10,11 @@ export default new Router({
     {
       path: '/',
       name: 'Anchor',
-      component: HelloWorld
+      component: Anchor
+    },
+    {
+      path: '/Helloworld',
+      component: Helloworld
     }
   ]
 })
