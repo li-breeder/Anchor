@@ -2,7 +2,7 @@
   <div>
     <!-- 内容区域 -->
     <div class="content">
-      <div v-for="(item, index) in items" :key="index">{{ item.text }}</div>
+      <div v-for="(item, index) in items" :key="index" :id="item.id">{{ item.text }}</div>
     </div>
     <!-- 导航区域 -->
     <ul class="nav">
@@ -25,12 +25,12 @@ export default {
     return {
       active: 0, // 当前激活的导航索引
       items: [
-        {text: '一级标题页面'},
-        {text: '一级标题页面'},
-        {text: '二级标题页面'},
-        {text: '二级标题页面'},
-        {text: '一级标题页面'},
-        {text: '一级标题页面'}
+        {text: '一级标题页面', id: 'div1'},
+        {text: '一级标题页面', id: 'div2'},
+        {text: '二级标题页面', id: 'div3'},
+        {text: '二级标题页面', id: 'div4'},
+        {text: '一级标题页面', id: 'div5'},
+        {text: '一级标题页面', id: 'div6'}
       ]
     }
   },
