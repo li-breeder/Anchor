@@ -114,7 +114,7 @@ export default {
   width: 300px;
   div {
     width: 100%;
-    height: 500px;
+    height: 700px;
     font-size: 48px;
     padding: 50%;
     margin: 10px 0;
@@ -146,6 +146,10 @@ export default {
     padding: 5px 20px;
     line-height: 1.6;
     list-style-type: none;
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
   }
   .active {
     color: #007FFF;
