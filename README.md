@@ -1,6 +1,6 @@
 # vue-demo
 
-> An Anchor component with vue!
+> 基于Vue的锚点组件
 
 ## Build Setup
 
