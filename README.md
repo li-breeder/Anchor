@@ -1,6 +1,6 @@
 # vue-demo
 
-> 基于Vue的锚点组件
+> 基于Vue的锚点组件（样式有待完善）
 
 ## Build Setup
 
